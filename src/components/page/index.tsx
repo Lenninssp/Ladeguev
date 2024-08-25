@@ -18,10 +18,10 @@ export function Page({ title, subtitle, imageSrc, altText, links }: PageProps) {
   const [on, setOn] = useState(false);
 
   return (
-    <div className="sticky top-0 h-screen contain-paint">
+    <div className="sticky top-0 h-screen contain-paint overflow-hidden">
       <div className="absolute left-0 right-0 top-0 z-20 w-full">
         <div className="section-padding grid-gap sticky top-0 flex h-screen grid-cols-12 flex-col justify-center gap-y-fluid-sm md:grid md:place-items-center md:items-center">
-          <div className="col-span-4 flex text-heading-sm tracking-heading justify-center items-center text-6xl text-yellow-500">
+          <div className="col-span-4 flex text-heading-sm tracking-heading justify-center items-center text-6xl text-alg">
             {title}
           </div>
           <div className="group relative col-span-4 flex aspect-square w-full items-center justify-center overflow-clip rounded-xl">
@@ -69,7 +69,7 @@ export function Page({ title, subtitle, imageSrc, altText, links }: PageProps) {
               </div>
             </button>
           </div>
-          <div className="col-span-4 flex text-heading-sm tracking-heading justify-center items-center text-6xl text-yellow-500">
+          <div className="col-span-4 flex text-heading-sm tracking-heading justify-center items-center text-6xl text-alg">
             {subtitle}
           </div>
         </div>

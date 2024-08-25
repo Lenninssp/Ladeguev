@@ -3,6 +3,7 @@
 import "@animxyz/core";
 import { page } from "./types/links";
 import { Page } from "../components/page";
+import { Navbar } from "@/components/navbar";
 
 const pages: page[] = [
   {
@@ -35,7 +36,7 @@ const pages: page[] = [
     ],
   },
   {
-    title: "Cosmosinfonica",
+    title: "My Feelings For You",
     subtitle: "DIARY OF A MUSICIAN",
     imageSrc: "/cat.jpeg",
     altText: "Cat",
@@ -68,6 +69,7 @@ const pages: page[] = [
 export default function Home() {
   return (
     <div>
+      <Navbar/>
       {pages.map((page, index) => (
         <Page key={index} {...page} />
       ))}
