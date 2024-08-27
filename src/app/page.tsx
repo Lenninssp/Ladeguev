@@ -4,6 +4,7 @@ import "@animxyz/core";
 import { page } from "./types/links";
 import { Page } from "../components/page";
 import { Navbar } from "@/components/navbar";
+import { PageFormatProvider } from "./contexts/format";
 
 const pages: page[] = [
   {
@@ -36,8 +37,8 @@ const pages: page[] = [
     ],
   },
   {
-    title: "My Feelings For You",
-    subtitle: "DIARY OF A MUSICIAN",
+    title: "Punch-Bag",
+    subtitle: "Dum depression bitch",
     imageSrc: "/cat.jpeg",
     altText: "Cat",
     links: [
@@ -68,11 +69,13 @@ const pages: page[] = [
 
 export default function Home() {
   return (
-    <div>
-      <Navbar/>
-      {pages.map((page, index) => (
-        <Page key={index} {...page} />
-      ))}
-    </div>
+    <PageFormatProvider>
+      <div>
+        <Navbar />
+        {pages.map((page, index) => (
+          <Page key={index} {...page} />
+        ))}
+      </div>
+    </PageFormatProvider>
   );
 }
