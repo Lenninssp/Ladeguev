@@ -38,7 +38,7 @@ const pages: page[] = [
   },
   {
     title: "Punch-Bag",
-    subtitle: "Dum depression bitch",
+    subtitle: "Dumb depression bitch",
     imageSrc: "/cat.jpeg",
     altText: "Cat",
     links: [

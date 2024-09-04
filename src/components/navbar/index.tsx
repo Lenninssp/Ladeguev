@@ -1,41 +1,61 @@
-import { usePageFormat } from "@/app/contexts/format";
+import React, { useState } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
+import { Menu, X } from 'lucide-react';
 import { cn } from "@/lib/utils";
-import { useState, useEffect } from "react";
 
 export const Navbar = () => {
-  const {isMobile} = usePageFormat();
   const [menuOpen, setMenuOpen] = useState(false);
-
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
 
   return (
-    <div className="px-[4%] fixed z-[123] w-full py-10 overflow-hidden">
-      <div className="w-full flex items-center justify-between">
-        <div className={cn("text-4xl text-alg hidden sm:flex")}>Alejandro Ladeguev</div>
-        {isMobile ? (
-          <div className="relative w-full flex flex-col items-end">
-            <button onClick={toggleMenu} className="text-3xl text-yellow-500 bg-alg rounded-full h-10 w-10">
-              ☰
-            </button>
-            {menuOpen && (
-              <div className="absolute¬ mt-10 h-fit bg-white shadow-md rounded-md">
-                <div className="py-2 px-4 text-2xl text-alg">link 1</div>
-                <div className="py-2 px-4 text-2xl text-alg">link 2</div>
-                <div className="py-2 px-4 text-2xl text-alg">link 3</div>
-              </div>
-            )}
+    <>
+      <div className={cn(
+        "fixed z-30 w-full transition-all duration-300",
+        menuOpen ? "h-screen" : "h-auto pointer-events-none"
+      )}>
+        <div className="px-[4%] py-10 w-full flex items-start justify-between pointer-events-auto">
+          <div className="z-30 text-2xl md:text-4xl font-bold text-alg mt-">
+            Alejandro Ladeguev
           </div>
-        ) : (
-          <div className="flex space-x-8">
+
+          <div className="relative md:hidden z-30">
+            <button
+              onClick={toggleMenu}
+              className="z-40 text-yellow-500 bg-alg rounded-full h-10 w-10 flex items-center justify-center"
+            >
+              {menuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
+
+          <div className="hidden md:flex space-x-8">
             <div className="text-2xl text-alg">link 1</div>
             <div className="text-2xl text-alg">link 2</div>
             <div className="text-2xl text-alg">link 3</div>
           </div>
-        )}
+        </div>
+
+        <AnimatePresence>
+          {menuOpen && (
+            <motion.div
+            className="fixed inset-0 bg-gradient-to-b from-black  to-transparent z-20 flex flex-col items-center justify-center"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            onClick={toggleMenu}
+            >
+              <nav className="text-white text-3xl space-y-8">
+                <div>link 1</div>
+                <div>link 2</div>
+                <div>link 3</div>
+              </nav>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
-    </div>
+    </>
   );
 };
