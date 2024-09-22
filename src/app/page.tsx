@@ -5,6 +5,7 @@ import { page } from "./types/links";
 import { Page } from "../components/page";
 import { Navbar } from "@/components/navbar";
 import { PageFormatProvider } from "./contexts/format";
+import "./styles.css"
 
 const pages: page[] = [
   {
@@ -12,6 +13,7 @@ const pages: page[] = [
     subtitle: "DIARY OF A MUSICIAN",
     imageSrc: "/cosmosinfonica.jpeg",
     altText: "Cosmosinfonica",
+    pos: "top-[0vh]",
     links: [
       {
         icon: "mdi:spotify",
@@ -41,6 +43,7 @@ const pages: page[] = [
     subtitle: "Dumb depression bitch",
     imageSrc: "/cat.jpeg",
     altText: "Cat",
+    pos: "top-[-100vh]",
     links: [
       {
         icon: "mdi:spotify",
@@ -72,9 +75,15 @@ export default function Home() {
     <PageFormatProvider>
       <div>
         <Navbar />
-        {pages.map((page, index) => (
-          <Page key={index} {...page} />
+        <div>
+
+        <div className=" grid-gap section-padding flex flex-col gap-y-fluid-lg">
+
+        </div>
+        {pages.map((page) => (
+          <Page key={page.title} {...page} />
         ))}
+        </div>
       </div>
     </PageFormatProvider>
   );

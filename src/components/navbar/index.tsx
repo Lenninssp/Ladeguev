@@ -11,7 +11,7 @@ export const Navbar = () => {
   };
 
   return (
-    <>
+    
       <div className={cn(
         "fixed z-30 w-full transition-all duration-300",
         menuOpen ? "h-screen" : "h-auto pointer-events-none"
@@ -48,14 +48,14 @@ export const Navbar = () => {
             onClick={toggleMenu}
             >
               <nav className="text-white text-3xl space-y-8">
-                <div>link 1</div>
-                <div>link 2</div>
+                <div>Ladeguev</div>
+                <div>The music</div>
                 <div>link 3</div>
               </nav>
             </motion.div>
           )}
         </AnimatePresence>
       </div>
-    </>
+    
   );
 };

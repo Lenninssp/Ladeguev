@@ -12,21 +12,23 @@ type PageProps = {
   subtitle: string;
   imageSrc: string;
   altText: string;
+  pos: string,
   links: link[];
 };
 
-export function Page({ title, subtitle, imageSrc, altText, links }: PageProps) {
+export function Page({ title, subtitle, imageSrc, altText, pos,  links }: PageProps) {
   const [on, setOn] = useState(false);
-
+  console.log(pos)
   return (
-    <div className="sticky top-0 h-screen w-screen contain-paint overflow-hidden">
-      <div className="absolute left-0 right-0 top-0 z-20 w-full">
-        <div className="section-padding grid-gap sticky top-0 flex h-screen grid-cols-12 flex-col justify-center gap-y-fluid-sm md:grid md:place-items-center md:items-center px-5">
-          <div className="md:col-span-4 text-center mb-4 md:mb-0">
-            <h2 className="text-2xl md:text-4xl lg:text-6xl text-alg font-bold tracking-tight">
+    <div className="sticky top-0 h-screen contain-paint">
+      <div className={cn(" h-[300vh] absolute left-0 right-0 top-0 z-20  w-full ", pos )}>
+        <div className="section-padding grid-gap  sticky top-0 flex h-screen grid-cols-12 flex-col justify-center  gap-y-fluid-sm md:grid md:place-items-center md:items-center">
+        <div className="md:col-span-4 text-center mt-4 md:mt-0">
+
+        <h2 className="text-2xl md:text-4xl lg:text-6xl text-alg font-bold tracking-tight">
               {title}
             </h2>
-          </div>
+            </div>
           <div className="md:col-span-4 w-full max-w-md mx-auto">
             <div className="relative aspect-square rounded-xl overflow-hidden">
               <button
@@ -84,17 +86,19 @@ export function Page({ title, subtitle, imageSrc, altText, links }: PageProps) {
           </div>
         </div>
       </div>
-      <div className="custom-gradient pointer-events-none absolute left-0 top-0 z-30 h-screen w-full animate-pan-overlay opacity-5"></div>
-      <div className="relative h-fit w-full">
-        <Image
-          src={imageSrc}
-          alt="Background"
-          className="absolute h-screen w-screen object-cover"
-          width={1600}
-          height={1600}
-        />
-        <div className="top absolute left-0 top-0 z-10 h-screen w-screen bg-gradient-to-t from-black"></div>
-      </div>
+      <div className=" pointer-events-none absolute left-0 top-0 z-30 h-screen w-full animate-pan-overlay opacity-5"></div>
+<div className="relative h-fit w-full">
+  {/* Image with blur effect */}
+  <Image
+    src={imageSrc}
+    alt="Background"
+    className="absolute h-screen w-screen object-cover blur-lg"  
+    width={1600}
+    height={1600}
+  />
+  {/* Overlay gradient */}
+  <div className="top absolute left-0 top-0 z-10 h-screen w-screen bg-gradient-to-t from-black"></div>
+</div>
     </div>
   );
 }

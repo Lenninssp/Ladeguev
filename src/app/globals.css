@@ -2,14 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-.contain-paint {
-  --tw-contain-paint: paint;
-  contain: var(--tw-contain-size) var(--tw-contain-layout) var(--tw-contain-paint) var(--tw-contain-style);
-}
-
-.mix-blend-difference {
-  mix-blend-mode: difference;
-}
 
 @layer base {
   :root {

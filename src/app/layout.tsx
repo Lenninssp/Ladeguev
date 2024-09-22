@@ -21,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={bebas.className}>
-        <div className="h-screen w-screen">{children}</div>
+        <div className="h-screen w-screen bg-black">{children}</div>
       </body>
     </html>
   );
