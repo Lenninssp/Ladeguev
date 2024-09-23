@@ -12,7 +12,7 @@ const pages: page[] = [
   {
     title: "Cosmosinfonica",
     subtitle: "DIARY OF A MUSICIAN",
-    imageSrc: "./cosmosinfonica.jpeg",
+    imageSrc: "/cosmosinfonica.jpeg",
     altText: "Cosmosinfonica",
     pos: "top-[0vh]",
     links: [
@@ -42,7 +42,7 @@ const pages: page[] = [
   {
     title: "Punch-Bag",
     subtitle: "Dumb depression bitch",
-    imageSrc: "./cat.jpeg",
+    imageSrc: "/cat.jpeg",
     altText: "Cat",
     pos: "top-[-100vh]",
     links: [
@@ -72,7 +72,7 @@ const pages: page[] = [
   {
     title: "Store",
     subtitle: "Coming soon",
-    imageSrc: "./hoodieBig.jpg",
+    imageSrc: "/hoodieBig.jpg",
     altText: "Cat",
     pos: "top-[-200vh]",
     links: [
@@ -92,7 +92,7 @@ export default function Home() {
       <div>
         <div className="relative h-screen w-screen overflow-hidden ">
           <Image
-            src="./cover.webp"
+            src="/cover.webp"
             alt="Background"
             layout="fill"
             objectFit="cover"
