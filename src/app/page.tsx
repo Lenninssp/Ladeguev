@@ -5,7 +5,8 @@ import { page } from "./types/links";
 import { Page } from "../components/page";
 import { Navbar } from "@/components/navbar";
 import { PageFormatProvider } from "./contexts/format";
-import "./styles.css"
+import "./styles.css";
+import Image from "next/image";
 
 const pages: page[] = [
   {
@@ -68,21 +69,48 @@ const pages: page[] = [
       },
     ],
   },
+  {
+    title: "Store",
+    subtitle: "Coming soon",
+    imageSrc: "/hoodieBig.jpg",
+    altText: "Cat",
+    pos: "top-[-200vh]",
+    links: [
+      {
+        icon: "map:grocery-or-supermarket",
+        name: "Store",
+        link: "/store",
+      },
+    ],
+  },
 ];
 
 export default function Home() {
   return (
     <PageFormatProvider>
+      <Navbar />
       <div>
-        <Navbar />
-        <div>
-
-        <div className=" grid-gap section-padding flex flex-col gap-y-fluid-lg">
-
+        <div className="relative h-screen w-screen overflow-hidden ">
+          <Image
+            src="/cover.webp"
+            alt="Background"
+            layout="fill"
+            objectFit="cover"
+            objectPosition="50% 100%"
+            quality={100}
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
+          <div className="relative z-10 h-full w-full p-8 flex flex-col justify-end">
+            <h2 className="relative col-span-full col-start-1 max-w-[15ch] text-display-0 uppercase leading-tight text-aqua-green">
+              The beginning of my legacy
+            </h2>
+          </div>
         </div>
-        {pages.map((page) => (
-          <Page key={page.title} {...page} />
-        ))}
+        <div>
+          {pages.map((page) => (
+            <Page key={page.title} {...page} />
+          ))}
         </div>
       </div>
     </PageFormatProvider>

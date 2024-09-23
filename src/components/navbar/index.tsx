@@ -31,9 +31,9 @@ export const Navbar = () => {
           </div>
 
           <div className="hidden md:flex space-x-8">
-            <div className="text-2xl text-alg">link 1</div>
-            <div className="text-2xl text-alg">link 2</div>
-            <div className="text-2xl text-alg">link 3</div>
+            <div className="text-2xl text-alg">Home</div>
+            <div className="text-2xl text-alg">New Relesases!</div>
+            <div className="text-2xl text-alg">Store</div>
           </div>
         </div>
 
@@ -48,9 +48,9 @@ export const Navbar = () => {
             onClick={toggleMenu}
             >
               <nav className="text-white text-3xl space-y-8">
-                <div>Ladeguev</div>
-                <div>The music</div>
-                <div>link 3</div>
+                <div>Home</div>
+                <div>New Release!</div>
+                <div>Store</div>
               </nav>
             </motion.div>
           )}
