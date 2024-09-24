@@ -11,4 +11,5 @@ export type page = {
   altText: string,
   pos: string,
   links: link[],
+  id?: string
 }

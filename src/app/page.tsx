@@ -40,6 +40,8 @@ const pages: page[] = [
         link: "https://music.apple.com/nz/album/cosmosinf%C3%B3nica/1733184864",
       },
     ],
+    id: "newReleases"
+
   },
   {
     title: "Punch Bag",
@@ -84,6 +86,7 @@ const pages: page[] = [
         link: "/store",
       },
     ],
+    id: "store"
   },
 ];
 export default function Home() {
@@ -94,7 +97,7 @@ export default function Home() {
       {!imageLoaded && <LoaderComponent />}
       <div className={`transition-opacity duration-500 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}>
         <Navbar />
-        <div className="relative h-screen w-screen overflow-hidden">
+        <div className="relative h-screen w-screen overflow-hidden" id="home">
           <Image
             src="/image00002.jpeg"
             alt="Background"

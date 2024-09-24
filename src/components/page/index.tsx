@@ -14,6 +14,7 @@ type PageProps = {
   altText: string;
   pos: string;
   links: link[];
+  id?: string
 };
 export function Page({
   title,
@@ -22,11 +23,11 @@ export function Page({
   altText,
   pos,
   links,
+  id = "",
 }: Readonly<PageProps>) {
   const [on, setOn] = useState(false);
-  console.log(pos);
   return (
-    <div className="sticky top-0 h-screen contain-paint">
+    <div className="sticky top-0 h-screen contain-paint" id={id}>
       <div
         className={cn(
           " h-[300vh] absolute left-0 right-0 top-0 z-20  w-full ",
