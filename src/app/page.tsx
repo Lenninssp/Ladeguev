@@ -100,11 +100,11 @@ export default function Home() {
       <div>
         <div className="relative h-screen w-screen overflow-hidden">
           <Image
-            src="/cover.webp"
+            src="/image00008.JPG"
             alt="Background"
             layout="fill"
             objectFit="cover"
-            objectPosition="50% 100%"
+            objectPosition="50% 70%"
             quality={100}
             priority
             onLoad={(e) => {
