@@ -14,7 +14,7 @@ const pages: page[] = [
   {
     title: "Cosmosinfonica",
     subtitle: "DIARY OF A MUSICIAN",
-    imageSrc: "/cosmosinfonica.jpeg",
+    imageSrc: "/cosmosinfonica.jpg",
     altText: "Cosmosinfonica",
     pos: "top-[0vh]",
     links: [
