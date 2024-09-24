@@ -242,9 +242,6 @@
   --font-suisse: "__suisse_dd29ff","__suisse_Fallback_dd29ff"
 }
 
-/*
-! tailwindcss v3.4.3 | MIT License | https://tailwindcss.com
-*/
 *,:after,:before {
   border: 0 solid
 }
