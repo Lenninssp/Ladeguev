@@ -42,7 +42,7 @@ const pages: page[] = [
     ],
   },
   {
-    title: "Punch-Bag",
+    title: "Punch Bag",
     subtitle: "Dumb depression bitch",
     imageSrc: "/cat.jpeg",
     altText: "Cat",
@@ -87,29 +87,25 @@ const pages: page[] = [
   },
 ];
 export default function Home() {
-  const [isLoading, setIsLoading] = useState(true);
-
-  const handleImageLoad = () => {
-    setIsLoading(false);
-  };
+  const [imageLoaded, setImageLoaded] = useState(false);
 
   return (
     <PageFormatProvider>
-      {isLoading && <LoaderComponent/>}
-      <Navbar />
-      <div>
+      {!imageLoaded && <LoaderComponent />}
+      <div className={`transition-opacity duration-500 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}>
+        <Navbar />
         <div className="relative h-screen w-screen overflow-hidden">
           <Image
-            src="/image00008.JPG"
+            src="/image00002.jpeg"
             alt="Background"
             layout="fill"
             objectFit="cover"
             objectPosition="50% 70%"
             quality={100}
             priority
-            onLoad={(e) => {
+            onLoad={() => {
               console.log("Image loaded!");
-              handleImageLoad();
+              setImageLoaded(true);
             }}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
