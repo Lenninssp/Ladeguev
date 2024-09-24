@@ -101,7 +101,7 @@ export function Page({
         <Image
           src={imageSrc}
           alt="Background"
-          className="absolute h-screen w-screen object-cover blur-lg"
+          className="absolute h-screen w-screen object-cover "
           width={1600}
           height={1600}
           
