@@ -2,7 +2,7 @@ import { Icon } from "@iconify/react/dist/iconify.js";
 import Image from "next/image";
 import Link from "next/link";
 import "@animxyz/core";
-import { XyzTransition, XyzTransitionGroup } from "@animxyz/react";
+import {  XyzTransitionGroup } from "@animxyz/react";
 import { useState } from "react";
 import { link } from "../../app/types/links";
 import { cn } from "@/lib/utils";

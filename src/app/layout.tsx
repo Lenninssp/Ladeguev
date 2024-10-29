@@ -1,10 +1,16 @@
-
 import type { Metadata } from "next";
-import { Bebas_Neue } from "next/font/google";
+import { Bebas_Neue, Roboto } from "next/font/google";
+import clsx from "clsx";
+
 import "./globals.css";
 
 const bebas = Bebas_Neue({
   weight: "400",
+  subsets: ["latin"],
+});
+
+const roboto = Roboto({
+  weight: ["400", "700"],
   subsets: ["latin"],
 });
 
@@ -20,7 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={bebas.className}>
+      <body className={clsx(bebas.className, roboto.className)}>
         <div className="h-screen w-screen bg-black">{children}</div>
       </body>
     </html>
