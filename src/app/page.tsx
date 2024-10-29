@@ -9,6 +9,7 @@ import { Navbar } from "@/components/navbar";
 import { PageFormatProvider } from "./contexts/format";
 import "./styles.css";
 import LoaderComponent from "@/components/loader";
+import Footer from "@/components/footer";
 
 const pages: page[] = [
   {
@@ -73,7 +74,7 @@ const pages: page[] = [
     ],
   },
   {
-    title: "Store",
+    title: "Merch",
     subtitle: "Coming soon",
     imageSrc: "/hoodieBig.jpg",
     altText: "Cat",
@@ -94,61 +95,55 @@ export default function Home() {
   return (
     <PageFormatProvider>
       <div className="-z-30">
-      <Image
-        src="/image00002.jpeg"
-        alt="Background"
-        layout="fill"
-        objectFit="cover"
-        objectPosition="50% 70%"
-        quality={100}
-        onLoadingComplete={() => {
-          setImageLoaded(true);
-        }}
-      />
+        <Image
+          src="/image00002.jpeg"
+          alt="Background"
+          layout="fill"
+          objectFit="cover"
+          objectPosition="50% 70%"
+          quality={100}
+          onLoadingComplete={() => {
+            setImageLoaded(true);
+          }}
+        />
       </div>
       {!imageLoaded ? (
-        <>
-          <LoaderComponent />
-        </>
+        <LoaderComponent />
       ) : (
-        <>
-          <div
-            className={`transition-opacity duration-500 ${
-              imageLoaded ? "opacity-100" : "opacity-0"
-            }`}
-          >
-            <Navbar />
-            <div
-              className="relative h-screen w-screen overflow-hidden"
-              id="home"
-            >
-              <Image
-                src="/image00002.jpeg"
-                alt="Background"
-                layout="fill"
-                objectFit="cover"
-                objectPosition="50% 70%"
-                quality={100}
-                priority
-                onLoad={() => {
-                  console.log("Image loaded!");
-                  setImageLoaded(true);
-                }}
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
-              <div className="relative z-10 h-full w-full p-8 flex flex-col justify-end">
-                <h2 className="relative col-span-full col-start-1 max-w-[15ch] text-display-0 uppercase leading-tight text-aqua-green">
-                  The beginning of my legacy
-                </h2>
-              </div>
-            </div>
-            <div>
-              {pages.map((page) => (
-                <Page key={page.title} {...page} />
-              ))}
+        <div
+          className={`transition-opacity duration-500 ${
+            imageLoaded ? "opacity-100" : "opacity-0"
+          }`}
+        >
+          <Navbar />
+          <div className="relative h-screen w-screen overflow-hidden" id="home">
+            <Image
+              src="/image00002.jpeg"
+              alt="Background"
+              layout="fill"
+              objectFit="cover"
+              objectPosition="50% 70%"
+              quality={100}
+              priority
+              onLoad={() => {
+                console.log("Image loaded!");
+                setImageLoaded(true);
+              }}
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
+            <div className="relative z-10 h-full w-full p-8 flex flex-col justify-end">
+              <h2 className="relative col-span-full col-start-1 max-w-[15ch] text-display-0 uppercase leading-tight text-aqua-green">
+                The beginning of my legacy
+              </h2>
             </div>
           </div>
-        </>
+          <div>
+            {pages.map((page) => (
+              <Page key={page.title} {...page} />
+            ))}
+          </div>
+          <Footer />
+        </div>
       )}
     </PageFormatProvider>
   );

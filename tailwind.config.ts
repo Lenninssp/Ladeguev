@@ -20,6 +20,19 @@ const config = {
     extend: {
       colors: {
         "alg" : "#E3DAC0",
+        'alg-color': {
+        '50': '#fef4ff',
+        '100': '#fce8ff',
+        '200': '#f9cfff',
+        '300': '#f7a5fd',
+        '400': '#f477fb',
+        '500': '#e944f1',
+        '600': '#d024d5',
+        '700': '#b01ab1',
+        '800': '#911791',
+        '900': '#761974',
+        '950': '#4f034d',
+    },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
