@@ -66,15 +66,6 @@ const Footer = () => {
                     alejandroisapussy@yaburgay.com
                   </a>
                 </li>
-
-                <li className="relative">
-                  <span aria-hidden="true" className="leading-tight opacity-0">
-                    Youtube
-                  </span>
-                  <a className="text-nowrap absolute bottom-0 left-0" href="/">
-                    Youtube
-                  </a>
-                </li>
               </ul>
             </nav>
           </div>

@@ -14,7 +14,7 @@ import Footer from "@/components/footer";
 const pages: page[] = [
   {
     title: "Cosmosinfonica",
-    subtitle: "DIARY OF A MUSICIAN",
+    subtitle: "2024",
     imageSrc: "/cosmosinfonica.jpg",
     altText: "Cosmosinfonica",
     pos: "top-[0vh]",
@@ -45,7 +45,7 @@ const pages: page[] = [
   },
   {
     title: "Punch Bag",
-    subtitle: "Dumb depression bitch",
+    subtitle: "2024",
     imageSrc: "/cat.jpeg",
     altText: "Cat",
     pos: "top-[-100vh]",

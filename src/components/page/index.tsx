@@ -2,7 +2,7 @@ import { Icon } from "@iconify/react/dist/iconify.js";
 import Image from "next/image";
 import Link from "next/link";
 import "@animxyz/core";
-import {  XyzTransitionGroup } from "@animxyz/react";
+import { XyzTransitionGroup } from "@animxyz/react";
 import { useState } from "react";
 import { link } from "../../app/types/links";
 import { cn } from "@/lib/utils";
@@ -14,7 +14,7 @@ type PageProps = {
   altText: string;
   pos: string;
   links: link[];
-  id?: string
+  id?: string;
 };
 export function Page({
   title,
@@ -47,13 +47,20 @@ export function Page({
                 onMouseEnter={() => setOn(true)}
                 onMouseLeave={() => setOn(false)}
               >
-                <Image
-                  src={imageSrc}
-                  alt={altText}
-                  width={1600}
-                  height={1600}
-                  className="w-full h-auto "
-                />
+                <div className="relative w-full h-auto">
+                  <Image
+                    src={imageSrc}
+                    alt={altText}
+                    width={1600}
+                    height={1600}
+                    className="w-full h-auto"
+                  />
+                  {subtitle === "Coming soon" && (
+                    <div className="absolute inset-0 bg-red-500 h-full w-full flex justify-center items-center">
+                      <div className=" bg-black w-full h-fit text-5xl text-white py-5"> Coming soon</div>
+                    </div>
+                  )}
+                </div>
                 <div className="absolute inset-0 bg-black bg-opacity-50 backdrop-filter backdrop-blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center">
                   {links.map((link) => (
                     <div
@@ -105,9 +112,8 @@ export function Page({
           className="absolute h-screen w-screen object-cover "
           width={1600}
           height={1600}
-          
         />
-        <div className="top absolute left-0 top-0 z-10 h-screen w-screen bg-gradient-to-t from-black"></div>
+        <div className={cn("top absolute left-0 top-0 z-10 h-screen w-screen bg-gradient-to-t from-black", subtitle === "Coming soon" && "absolute inset-0 bg-red-500")}></div>
       </div>
     </div>
   );

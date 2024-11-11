@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { AnimatePresence, motion, useTransform, useViewportScroll } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import { cn } from "@/lib/utils";
 
 export const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -34,7 +33,6 @@ export const Navbar = () => {
   return (
     <motion.div
       id="navigation"
-      style={{ background, height }}
       className="fixed w-full z-30"
     >
       <div className="px-[4%] py-10 flex items-start justify-between">
