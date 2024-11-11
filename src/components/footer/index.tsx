@@ -60,10 +60,10 @@ const Footer = () => {
               <ul className=" flex flex-col gap-y-2  text-brighter-aqua-green">
                 <li className="relative">
                   <span aria-hidden="true" className="leading-tight opacity-0">
-                    alejandroisapussy@yaburgay.com
+                    alejandro@ladeguev.com
                   </span>
                   <a className="text-nowrap absolute bottom-0 left-0" href="/">
-                    alejandroisapussy@yaburgay.com
+                  alejandro@ladeguev.com
                   </a>
                 </li>
               </ul>
