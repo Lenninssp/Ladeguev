@@ -24,7 +24,11 @@ const pages: page[] = [
         name: "Spotify",
         link: "https://open.spotify.com/album/6LpJOVEXKyLpqn4T2M0uLP",
       },
-      { icon: "simple-icons:tidal", name: "Tidal", link: "" },
+      {
+        icon: "simple-icons:tidal",
+        name: "Tidal",
+        link: "https://tidal.com/album/348383251?u",
+      },
       {
         icon: "simple-icons:youtubemusic",
         name: "Youtube Music",
@@ -53,30 +57,69 @@ const pages: page[] = [
       {
         icon: "mdi:spotify",
         name: "Spotify",
-        link: "https://open.spotify.com/album/6LpJOVEXKyLpqn4T2M0uLP",
+        link: "https://open.spotify.com/track/7gv9jb80yCeO0gbvWfzfsN?si=0fa1e583bbf34914",
       },
-      { icon: "simple-icons:tidal", name: "Tidal", link: "" },
+      {
+        icon: "simple-icons:tidal",
+        name: "Tidal",
+        link: "https://tidal.com/track/378026631?u",
+      },
       {
         icon: "simple-icons:youtubemusic",
         name: "Youtube Music",
-        link: "https://music.youtube.com/playlist?list=OLAK5uy_kDthP74HY_8ktpacEDz1v9i-R2hFWOcrA",
+        link: "https://music.youtube.com/watch?v=sDd4wWt3hVs&si=5DBvhyQyTIy_FnwE",
       },
       {
         icon: "mdi:youtube",
         name: "Youtube",
-        link: "https://www.youtube.com/watch?v=zEbjcVbTQHs&list=OLAK5uy_lIDRflT2xh4BrMCroAxzwtTeAWTlLOHa8",
+        link: "https://www.youtube.com/watch?v=sDd4wWt3hVs",
       },
       {
         icon: "simple-icons:applemusic",
         name: "Apple Music",
-        link: "https://music.apple.com/nz/album/cosmosinf%C3%B3nica/1733184864",
+        link: "https://music.apple.com/ca/album/punch-bag/1760097370?i=1760097372",
       },
+    ],
+  },
+  {
+    title: "Onrio",
+    subtitle: "2025",
+    imageSrc: "/onrio.png",
+    altText: "onrio",
+    pos: "top-[-200vh]",
+    links: [
+      {
+        icon: "",
+        name: "Releasing Soon",
+        link: "",
+      },
+      // {
+      //   icon: "mdi:spotify",
+      //   name: "Spotify",
+      //   link: "https://open.spotify.com/album/6LpJOVEXKyLpqn4T2M0uLP",
+      // },
+      // { icon: "simple-icons:tidal", name: "Tidal", link: "" },
+      // {
+      //   icon: "simple-icons:youtubemusic",
+      //   name: "Youtube Music",
+      //   link: "https://music.youtube.com/playlist?list=OLAK5uy_kDthP74HY_8ktpacEDz1v9i-R2hFWOcrA",
+      // },
+      // {
+      //   icon: "mdi:youtube",
+      //   name: "Youtube",
+      //   link: "https://www.youtube.com/watch?v=zEbjcVbTQHs&list=OLAK5uy_lIDRflT2xh4BrMCroAxzwtTeAWTlLOHa8",
+      // },
+      // {
+      //   icon: "simple-icons:applemusic",
+      //   name: "Apple Music",
+      //   link: "https://music.apple.com/nz/album/cosmosinf%C3%B3nica/1733184864",
+      // },
     ],
   },
   {
     title: "Merch",
     subtitle: "Coming soon",
-    imageSrc: "/hoodieBig.jpg",
+    imageSrc: "",
     altText: "Cat",
     pos: "top-[-200vh]",
     links: [
@@ -91,6 +134,14 @@ const pages: page[] = [
 ];
 export default function Home() {
   const [imageLoaded, setImageLoaded] = useState(false);
+
+  const sortedPages = [...pages].sort(
+    (a, b) => parseInt(b.subtitle) - parseInt(a.subtitle)
+  );
+  const sortedPagesWithPos = sortedPages.map((page, index) => ({
+    ...page,
+    pos: `top-[-${index * 100}vh]`, // Adjusting `pos` dynamically
+  }));
 
   return (
     <PageFormatProvider>
@@ -138,7 +189,7 @@ export default function Home() {
             </div>
           </div>
           <div>
-            {pages.map((page) => (
+            {sortedPagesWithPos.map((page) => (
               <Page key={page.title} {...page} />
             ))}
           </div>

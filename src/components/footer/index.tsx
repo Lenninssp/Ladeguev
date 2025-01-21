@@ -1,3 +1,4 @@
+import Link from "next/link";
 import "./styles.css";
 
 const Footer = () => {
@@ -6,7 +7,7 @@ const Footer = () => {
       <div className="spacing sticky bottom-12 flex flex-col gap-y-12">
         <div className="grid-gap flex grid-cols-12 flex-col h-full gap-y-12 md:grid">
           <p className=" col-span-6 max-w-[20ch] text-h5 font-medium leading-snug text-aqua-green lg: text-h2 2xl:text-h3">
-            Please contact me or whatever
+            Contact Me here 
           </p>
           <div className="col-span-6 flex grid-cols-subgrid justify-between md:grid mb-10">
             <nav className="link-text col-span-3 flex flex-col gap-y-6 ">
@@ -18,36 +19,27 @@ const Footer = () => {
                   <span aria-hidden="true" className="leading-tight opacity-0">
                     Instagram
                   </span>
-                  <a className="text-nowrap absolute bottom-0 left-0" href="/">
+                  <Link href={"https://www.instagram.com/ladeguev?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="} className="text-nowrap absolute bottom-0 left-0" >
                     Instagram
-                  </a>
+                  </Link>
                 </li>
 
                 <li className="relative">
                   <span aria-hidden="true" className="leading-tight opacity-0">
                     Youtube
                   </span>
-                  <a className="text-nowrap absolute bottom-0 left-0" href="/">
+                  <Link href={"https://www.youtube.com/channel/UCIB3zURyRNKENYvaPeEA4WA"} className="text-nowrap absolute bottom-0 left-0">
                     Youtube
-                  </a>
+                  </Link>
                 </li>
 
                 <li className="relative">
                   <span aria-hidden="true" className="leading-tight opacity-0">
                     Tik-Tok
                   </span>
-                  <a className="text-nowrap absolute bottom-0 left-0" href="/">
+                  <Link href={"https://www.tiktok.com/@ladeguev"} className="text-nowrap absolute bottom-0 left-0" >
                     Tik-Tok
-                  </a>
-                </li>
-
-                <li className="relative">
-                  <span aria-hidden="true" className="leading-tight opacity-0">
-                    X - Twitter
-                  </span>
-                  <a className="text-nowrap absolute bottom-0 left-0" href="/">
-                    X - Twitter
-                  </a>
+                  </Link>
                 </li>
               </ul>
 
