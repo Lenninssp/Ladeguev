@@ -30,7 +30,7 @@ export function Page({
     <div className="sticky top-0 h-screen contain-paint" id={id}>
       <div
         className={cn(
-          " h-[300vh] absolute left-0 right-0 top-0 z-20  w-full ",
+          " h-[400vh] absolute left-0 right-0 top-0 z-20  w-full ",
           pos
         )}
       >

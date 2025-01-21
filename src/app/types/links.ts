@@ -9,7 +9,7 @@ export type page = {
   subtitle: string,
   imageSrc: string,
   altText: string,
-  pos: string,
+
   links: link[],
   id?: string
 }

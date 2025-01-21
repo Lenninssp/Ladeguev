@@ -17,7 +17,7 @@ const pages: page[] = [
     subtitle: "2024",
     imageSrc: "/cosmosinfonica.jpg",
     altText: "Cosmosinfonica",
-    pos: "top-[0vh]",
+
     links: [
       {
         icon: "mdi:spotify",
@@ -52,7 +52,7 @@ const pages: page[] = [
     subtitle: "2024",
     imageSrc: "/cat.jpeg",
     altText: "Cat",
-    pos: "top-[-100vh]",
+
     links: [
       {
         icon: "mdi:spotify",
@@ -86,7 +86,7 @@ const pages: page[] = [
     subtitle: "2025",
     imageSrc: "/onrio.png",
     altText: "onrio",
-    pos: "top-[-200vh]",
+
     links: [
       {
         icon: "",
@@ -119,9 +119,9 @@ const pages: page[] = [
   {
     title: "Merch",
     subtitle: "Coming soon",
-    imageSrc: "",
+    imageSrc: "/hoodie.jpg",
     altText: "Cat",
-    pos: "top-[-200vh]",
+
     links: [
       {
         icon: "map:grocery-or-supermarket",
@@ -140,7 +140,7 @@ export default function Home() {
   );
   const sortedPagesWithPos = sortedPages.map((page, index) => ({
     ...page,
-    pos: `top-[-${index * 100}vh]`, // Adjusting `pos` dynamically
+    pos: `top-[-${index * 100 }vh]`, 
   }));
 
   return (
