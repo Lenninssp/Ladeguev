@@ -184,7 +184,7 @@ export default function Home() {
             <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
             <div className="relative z-10 h-full w-full p-8 flex flex-col justify-end">
               <h2 className="relative col-span-full col-start-1 max-w-[15ch] text-display-0 uppercase leading-tight text-aqua-green">
-                The beginning of my legacy
+                RELEASES
               </h2>
             </div>
           </div>
