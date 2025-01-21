@@ -84,7 +84,7 @@ const pages: page[] = [
   {
     title: "Onrio",
     subtitle: "2025",
-    imageSrc: "/onrio.png",
+    imageSrc: "/onrio.jpg",
     altText: "onrio",
 
     links: [
@@ -119,8 +119,8 @@ const pages: page[] = [
   {
     title: "Merch",
     subtitle: "Coming soon",
-    imageSrc: "/hoodie.jpg",
-    altText: "Cat",
+    imageSrc: "/cosmosinfonica.jpeg",
+    altText: "Store",
 
     links: [
       {
