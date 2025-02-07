@@ -82,7 +82,7 @@ const pages: page[] = [
     ],
   },
   {
-    title: "Onrio",
+    title: "Onryo",
     subtitle: "2025",
     imageSrc: "/onrio.jpg",
     altText: "onrio",
